@@ -71,6 +71,9 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
+    LC_CTYPE="en_US.UTF-8";
+    LANG="en_US.UTF-8";
+    LC_ALL = "en_US.UTF-8";
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
     LC_MEASUREMENT = "en_US.UTF-8";
@@ -95,7 +98,6 @@
   };
 
   # Enable Hyprland + Other WMs 
-  # Hyprland
   programs.hyprland.enable = true;
   /* # DWM 
   services.xserver.windowManager.dwm = {
@@ -114,12 +116,13 @@
   # Enable Doas and Disable sudo
   security.doas.enable = true;
   security.sudo.enable = false;
-  /* # Configure doas
+
+  # Configure doas
   security.doas.extraRules = [{
   users = [ "john1917" ];
   keepEnv = true;
   persist = true;  
-  }]; */
+  }]; 
   
   # Enable fonts 
   fonts.packages = with pkgs; [
@@ -147,7 +150,7 @@
       };
       displayManager.lightdm = {
         enable = true;
-        background = ./wallpapers/anime_girl_mountain_everblush_hald8_GaussianRBF_lum1_shape96_near16.png;
+        background = ./wallpapers/your-name-comet-everblush.png;
         greeters = {
          slick.enable = true;
          };
