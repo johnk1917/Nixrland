@@ -1,11 +1,11 @@
 { pkgs }: 
 
 pkgs.writeShellScriptBin "wifi-menu" ''
-bssid=$( ${pkgs.networkmanager}/bin/nmcli dev wifi list | sed -n '1!p' | cut -b 9- | ${pkgs.rofi}/bin/rofi -dmenu -theme ~/.config/rofi/wifi-menu/style-1.rasi -p " " | cut -d' ' -f1)
+bssid=$( ${pkgs.networkmanager}/bin/nmcli dev wifi list | sed -n '1!p' | cut -b 9- | ${pkgs.rofi-wayland}/bin/rofi -dmenu -theme ~/.config/rofi/wifi-menu/style-1.rasi -p " " | cut -d' ' -f1)
 
 [ -z "$bssid" ] && exit
 
-password=$(echo "" | ${pkgs.rofi}/bin/rofi -dmenu -theme ~/.config/rofi/wifi-menu/wifi-password.rasi -p " " )
+password=$(echo "" | ${pkgs.rofi-wayland}/bin/rofi -dmenu -theme ~/.config/rofi/wifi-menu/wifi-password.rasi -p " " )
 
 [ -z "$password" ] && exit
 

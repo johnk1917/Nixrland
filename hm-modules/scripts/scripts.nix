@@ -137,7 +137,7 @@ fi
 
 screenshot = pkgs.writeShellApplication {
   name = "screenshot";
-  runtimeInputs = with pkgs; [rofi grim slurp];
+  runtimeInputs = with pkgs; [rofi-wayland grim slurp];
   text = ''
 icon=/etc/nixos/hm-modules/icons/camera-photo-symbolic.svg
 
@@ -160,7 +160,7 @@ fi
 
 library = pkgs.writeShellApplication {
   name = "library";
-  runtimeInputs = with pkgs; [zathura rofi];
+  runtimeInputs = with pkgs; [zathura rofi-wayland];
   text = ''
 book_directory="$HOME/Documents/Books/"
 selected=$(find "''${book_directory}" -mindepth 1 -printf '%P\n' -iname ".pdf" | rofi -dmenu -theme ~/.config/rofi/pdf-launcher/style-1.rasi drun -display-drun -p " ")
@@ -200,7 +200,7 @@ swww img "''${wallpapers}""''${selected_wallpaper}" && dunstify -u low --replace
 
 power-menu = pkgs.writeShellApplication {
   name = "powermenu";
-  runtimeInputs = with pkgs; [swaylock-effects rofi];
+  runtimeInputs = with pkgs; [swaylock-effects rofi-wayland];
   text = ''
   # Current Theme
 dir="$HOME/.config/rofi/powermenu/"
@@ -299,7 +299,7 @@ esac
 
 rofi-menu = pkgs.writeShellApplication {
   name = "rofi-menu";
-  runtimeInputs = with pkgs; [rofi];
+  runtimeInputs = with pkgs; [rofi-wayland];
   text = ''
    dir="$HOME/.config/rofi/launchers/type-1"
     theme='style-1'

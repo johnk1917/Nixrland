@@ -26,6 +26,7 @@
       exec-once = dunst
       exec-once = spotifyd
       exec-once = waybar
+      exec-once = foot --server
 
       # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
       input {
@@ -112,7 +113,7 @@
 
       master {
           # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-          new_is_master = false 
+          new_on_top = false 
       }
 
       gestures {
@@ -136,7 +137,7 @@
       windowrule = pin,^(pavucontrol)$
       windowrule = size 900 500,^(pavucontrol)$
       windowrule = move 505 300,^(pavucontrol)$
-      windowrulev2 = stayfocused, class:(rofi)
+      windowrule = stayfocused, class:(rofi)
 
       ########################################################################################
       #                                                                                      #
@@ -151,7 +152,7 @@
       $altMod = ALT
 
       # Set terminal
-      $terminal = foot
+      $terminal = footclient
       $terminal2 = kitty
 
       # Launch programs
@@ -167,7 +168,6 @@
       bind = $mainMod, W, exec, wallpaper-switch
       bind = $mainMod SHIFT, G, exec, library
       bind = $mainMod SHIFT, W, exec, wifi-menu
-      bind = $altMod SHIFT, S, exec, $terminal2 -e spt
       bind = $mainMod SHIFT, D, exec, discord
       bind = $mainMod SHIFT, R, exec, $terminal -e yazi
       bind = $mainMod SHIFT, Z, exec, zathura

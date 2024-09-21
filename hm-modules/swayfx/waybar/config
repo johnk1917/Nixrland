@@ -1,0 +1,140 @@
+[
+  {
+    "backlight": {
+      "format": "{icon}{percent}%",
+      "format-icons": [
+        "󰃞 ",
+        "󰃟 ",
+        "󰃠 "
+      ],
+      "on-scroll-down": "light -U 1",
+      "on-scroll-up": "light -A 1"
+    },
+    "battery": {
+      "format": "{icon}{capacity}%",
+      "format-alt": "{time} {icon}",
+      "format-charging": "󱐋{capacity}%",
+      "format-icons": [
+        "  ",
+        "  ",
+        "  ",
+        "  ",
+        "  "
+      ],
+      "format-plugged": " ",
+      "states": {
+        "critical": "15",
+        "warning": "30"
+      },
+      "tooltip-format": "{timeTo} {capacity}%"
+    },
+    "clock": {
+      "format": " {:%H:%M}",
+      "format-alt": " {:%A, %B %d, %Y}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+      "format": " {usage}%",
+      "tooltip": "false"
+    },
+    "custom/distro": {
+      "format": " ",
+      "on-click": "rofi-menu",
+      "on-click-release": "sleep 0"
+    },
+    "custom/powermenu": {
+      "format": " ",
+      "on-click": "powermenu",
+      "on-click-release": "sleep 1"
+    },
+    "sway/workspaces": {
+      "active-only": "false",
+      "all-outputs": "true",
+      "disable-scroll": "false",
+      "format": "{icon}",
+      "format-icons": {
+        "1": " ",
+        "10": "󰊴 ",
+        "2": " ",
+        "3": " ",
+        "4": " ",
+        "5": " ",
+        "6": " ",
+        "7": " ",
+        "8": " ",
+        "9": " "
+      },
+      "on-click": "activate",
+      "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "on-scroll-up": "hyprctl dispatch workspace e+1"
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": " ",
+        "deactivated": " "
+      }
+    },
+    "layer": "top",
+    "margin": "8px 10px -2px 10px",
+    "memory": {
+      "format": " {}%"
+    },
+    "modules-center": [],
+    "modules-left": [
+      "custom/distro",
+      "sway/workspaces",
+      "sway/window"
+    ],
+    "modules-right": [
+      "battery",
+      "cpu",
+      "memory",
+      "backlight",
+      "pulseaudio",
+      "clock",
+      "network",
+      "tray",
+      "custom/powermenu"
+    ],
+    "network": {
+      "format-disconnected": "󰤮 Disconnected",
+      "format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
+      "format-linked": "{ifname} (No IP)  ",
+      "format-wifi": " {essid} {signalStrength}%",
+      "on-click": "wifi-menu",
+      "on-click-release": "sleep 0",
+      "tooltip-format": "{essid} {signalStrength}%"
+    },
+    "pulseaudio": {
+      "format": "{icon}{volume}% {format_source}",
+      "format-bluetooth": "{icon} {volume}%",
+      "format-bluetooth-muted": "   {volume}%",
+      "format-icons": {
+        "car": " ",
+        "default": [
+          " ",
+          " ",
+          "  "
+        ],
+        "hands-free": " ",
+        "headphone": " ",
+        "headset": " ",
+        "phone": " ",
+        "portable": " "
+      },
+      "format-muted": "  {format_source}",
+      "format-source": "",
+      "format-source-muted": "",
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click-middle": "pavucontrol",
+      "on-click-middle-release": "sleep 0",
+      "on-click-release": "sleep 0",
+      "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+      "tooltip-format": "{desc} {volume}%"
+    },
+    "tray": {
+      "spacing": 8
+    }
+  }
+]

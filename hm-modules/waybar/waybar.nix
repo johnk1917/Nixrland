@@ -182,9 +182,9 @@
         }
 
         window#waybar {
+          /* background-color: rgba(0, 0, 0, 0); */
           /* background-color: rgba(18, 21, 29, 0.98); */
           background-color: @background;
-          /* background-color: rgba(0, 0, 0, 0); */
           border-radius: 6px;
           color: @foreground;
           opacity: 1;
@@ -210,7 +210,7 @@
         #custom-media,
         #custom-powermenu,
         #custom-fans,
-        #custom-wmname,
+        #custom-distro,
         #clock,
         #idle_inhibitor,
         #language,
@@ -343,12 +343,12 @@
             color: @blue;
         }
 
-        #custom-wmname {
+        #custom-distro {
             color: @accent;
             background-color: @background;
             font-size: 25px;
             margin: 1px;
-            padding: 0px 0px 0px 5px;
+            padding: 0px 0px 0px 6px;
         }
 
         #network.disconnected {
@@ -370,7 +370,7 @@
         margin = "8px 10px -2px 10px";
         layer = "top";
 
-        modules-left = ["custom/wmname" "hyprland/workspaces" "hyprland/window"];
+        modules-left = ["custom/distro" "hyprland/workspaces" "hyprland/window"];
         modules-center = [];
         modules-right = ["battery" "cpu" "memory" "backlight" "pulseaudio" "clock" "network" "tray" "custom/powermenu"];
 
@@ -439,7 +439,7 @@
           format = "{icon}{capacity}%";
           tooltip-format = "{timeTo} {capacity}%";
           format-charging = "󱐋{capacity}%";
-          format-plugged = " ";
+          format-plugged = " {capacity}%";
           format-alt = "{time} {icon}";
           format-icons = ["  " "  " "  " "  " "  "];
         };
@@ -478,7 +478,7 @@
           on-click-middle-release = "sleep 0";
         };
 
-        "custom/wmname" = {
+        "custom/distro" = {
           format = " ";
           on-click = "rofi-menu";
           on-click-release = "sleep 0";
