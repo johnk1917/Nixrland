@@ -65,7 +65,11 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Asia/Ho_Chi_Minh";
+  /* Vietnam */
+  /* time.timeZone = "Asia/Ho_Chi_Minh"; */ 
+
+  /* United States */
+  time.timeZone = "America/Chicago";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -99,6 +103,7 @@
 
   # Enable Hyprland + Other WMs 
   programs.hyprland.enable = true;
+  programs.sway.enable = true;
   /* # DWM 
   services.xserver.windowManager.dwm = {
   enable = true;

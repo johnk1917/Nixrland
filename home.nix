@@ -25,6 +25,7 @@
           ./hm-modules/neofetch/neofetch.nix
           ./hm-modules/neovim/nvchad.nix
           ./hm-modules/betterdiscord/betterdiscord.nix
+          ./hm-modules/swayfx/swayfx.nix 
       ];
 
       # Enable GTK themes

@@ -30,11 +30,14 @@ in
      obs-studio
      element-desktop
      zoom
+     stremio
      obsidian
      osu-lazer
-     /*steam
-     steam-run */
+     steam
+     steam-run 
+     nodePackages_latest.peerflix
      lunar-client
+     prismlauncher
      nitch
      htop
      killall
@@ -45,14 +48,15 @@ in
      appimage-run
      pavucontrol
      gtk3
-     autotiling
+     /* autotiling */
      zathura
      sioyek
      grim
      slurp
      wl-clipboard
-     neofetch
      lf
+     fastfetch
+     monero-gui
      yazi
      ranger
      audacity
@@ -61,7 +65,7 @@ in
      betterdiscordctl
      git
      gnumake
-     ueberzug
+     /* ueberzug */
      lsix
      python3
      jdk17

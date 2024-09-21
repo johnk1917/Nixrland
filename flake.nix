@@ -13,9 +13,14 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    swaymonad = {
+    url = "github:nicolasavru/swaymonad";
+    inputs.nixpkgs.follows = "nixpkgs"; # not mandatory but recommended
+  };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, swaymonad, ... }:
   {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
@@ -24,6 +29,12 @@
         modules = [ 
           ./configuration.nix
           home-manager.nixosModules.home-manager
+
+          ({self, pkgs, ... }: {
+            environment.systemPackages = with pkgs; [
+              swaymonad.defaultPackage.x86_64-linux
+            ];
+          })
           {
             home-manager = {
             useGlobalPkgs = true;
